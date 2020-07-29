@@ -22,7 +22,7 @@ public class ViewFX<T extends Controller, U extends Parent> {
 
     public static <T extends Controller, U extends Parent> ViewFX<T, U> of(Class<T> controllerClass, Class<U> componentClass) {
         try {
-            return new ViewFX(controllerClass, null);
+            return new ViewFX<>(controllerClass, null);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -30,7 +30,7 @@ public class ViewFX<T extends Controller, U extends Parent> {
 
     public static <T extends Controller, U extends Parent> ViewFX<T, U> of(Class<T> controllerClass, Class<U> componentClass, ResourceBundle resourceBundle) {
         try {
-            return new ViewFX(controllerClass, resourceBundle);
+            return new ViewFX<>(controllerClass, resourceBundle);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
